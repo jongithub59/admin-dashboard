@@ -9,6 +9,8 @@
 :root {
     --blue-color: #0891b2;
     --azure: azure;
+    --yellow-color: rgb(255, 255, 12);
+
 }
 
 body {
@@ -23,7 +25,7 @@ body {
     background-color: rgb(221, 221, 204);
 }
 .header {
-    grid-area: 1 / 2 / 1 / 5;
+    grid-area: 1 / 2 / 1 / 4;
     display: grid;
     grid-template: 1fr 1fr / 2fr 1fr;
     border: 2px solid black;
@@ -62,7 +64,8 @@ body {
 
 .user-bar {
     display: grid;
-    grid-template-columns: 80px 100px 200px;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     font-size: 25px;
@@ -71,15 +74,17 @@ body {
 }
 
 .user-bar img {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%
+    height: 90px;
+    width: 90px;
+    margin: 0;
 }
 
 .bell img {
+    display: flex;
     height: 50px;
     width: 50px;
-    border-radius: 0;
+    margin: auto;
+    justify-self: flex-end;
 }
 
 .greeting {
@@ -92,21 +97,20 @@ body {
 }
 
 .greeting img {
-    height: 110px;
-    width: 110px;
-    border-radius: 50%;
+    height: 120px;
+    width: 120px;
     margin-right: 20px;
 }
 
 #hey {
     margin: 0;
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 3px;
     align-self: flex-end;
 }
 
 #name {
-    font-size: 30px;
+    font-size: 35px;
     margin: 0;
     align-self: flex-start;
 }
@@ -141,7 +145,13 @@ button {
     height: 100%;
 }
 
+.nav div div:hover {
+    color: var(--yellow-color)
+}
+
+
 .nav {
+    top: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -183,12 +193,12 @@ button {
 }
 
 .main-content {
-    grid-area: 2 / 2 / 2 / 2;
+    grid-area: 2 / 2 / 3 / 3;
     border: 2px solid black;
 }
 
 .side-content {
-    grid-area:  2 / 3 / 2 / 4;
+    grid-area:  2 / 3 / 3 / 4;
     border: 2px solid black;
 }
 
@@ -201,18 +211,21 @@ button {
     margin: auto;
     overflow: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-template-rows: repeat(4, 400px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 }
 
 .project {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
     margin: 15px;
     padding: 10px;
     font-size: 15px;
     font-weight: 500;
-    box-shadow: 0px 2px 10px 2px;
+    box-shadow: 0px 2px 10px 2px,
+    inset 0 -10px 0 var(--yellow-color);
     border-radius: 10px;
     background-color: var(--blue-color);
     
@@ -221,47 +234,28 @@ button {
 .project a {
     text-decoration: none;
     color: var(--azure);
-    margin: 5px;
+    margin: 15px 5px;
     font-size: 20px;
 }
 
 .project a:hover {
-    color: rgb(69, 22, 156);
+    color: var(--yellow-color)
 }
 
 .project p {
-    margin-bottom: 20px;
+    margin: 10px 0;
     color: var(--azure);
 }
 
-.image {
+.project-grid img {
     display: flex;
-    height: 90%;
-    width: 100%; 
+    height: auto;
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
     align-self: center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain; 
+    max-height: 400px;
+    margin: 0 auto;
     border-radius: 10px;
-    margin: 5px 0;
-}
-
-#calc {
-    background-image: url(pics/calc.JPG);
-}
-
-#etch {
-    background-image: url(pics/etch.JPG);
-}
-
-#signup {
-    background-image: url(pics/signup.JPG);
-}
-
-#rps {
-    background-image: url(pics/rps.JPG);
-}
-
-#landing-page {
-    background-image: url(pics/landingpage.JPG);
+    box-shadow: 0px 1px 5px 1px;
 }
