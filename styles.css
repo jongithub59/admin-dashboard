@@ -176,7 +176,7 @@ button {
     height: 70px;
     width: 70px;
     margin-right: -10px;
-    filter: invert(100%) sepia(60%) saturate(2%) hue-rotate(166deg) brightness(110%) contrast(101%);
+    filter: invert(100%);
 
 }
 
@@ -217,7 +217,7 @@ button {
 .announcements {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .announcement-content {
@@ -225,11 +225,19 @@ button {
     flex-direction: column;
 }
 
+.trending {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .trending-content {
     display: flex;
     align-items: center;
     gap: 25px;
     padding: 10px 0;
+    border: solid 3px rgb(18, 119, 126);
+    padding: 20px;
 }
 
 span {
